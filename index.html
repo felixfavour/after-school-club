@@ -8,6 +8,22 @@
   <script src="https://unpkg.com/vue"></script>
 </head>
 <body>
-  
+  <div id="app">
+    <!-- Entry point of our application -->
+  </div>
+  <script>
+    const instance = new Vue({
+      el: '#app',
+      data: {
+        lesson: {
+          subject: 'Math',
+          location: 'London',
+          price: 100,
+          image: 'math.jpeg',
+          numberOfSpaces: 5
+        }
+      }
+    });
+  </script>
 </body>
 </html>
