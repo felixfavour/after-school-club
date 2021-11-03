@@ -37,7 +37,9 @@
       },
       methods: {
         addToCart: function () {
-          this.lesson.numberOfSpaces -= 1
+          if (this.lesson.numberOfSpaces > 0) {
+            this.lesson.numberOfSpaces -= 1
+          }
         }
       }
     });
