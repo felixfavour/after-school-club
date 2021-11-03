@@ -10,6 +10,15 @@
 <body>
   <div id="app">
     <!-- Entry point of our application -->
+    <div class="lesson">
+      <img v-bind:src="lesson.image" alt="">
+      <div class="info">
+        <h2>{{ lesson.subject }}</h2>
+        <p>{{ lesson.location }}</p>
+        <p>Price: {{ lesson.price }}</p>
+        <p>Number of Spaces: {{ lesson.numberOfSpaces }}</p>
+      </div>
+    </div>
   </div>
   <script>
     const instance = new Vue({
