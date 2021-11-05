@@ -14,16 +14,11 @@
       padding: 24px;
       width: 200px;
     }
-    button {
-      background: rgb(55, 55, 255);
-      color: #FFFFFF;
-      border: none;
-      margin-top: 32px;
-    }
   </style>
 </head>
 <body>
   <div id="app">
+    <h1>After School Club</h1>
     <!-- Entry point of our application -->
     <div class="lesson">
       <div class="info">
@@ -32,7 +27,10 @@
         <p>Price: £{{ lesson.price }}</p>
         <p>Spaces: {{ lesson.numberOfSpaces }}</p>
       </div>
-      <button v-on:click="addToCart">
+      <button v-show="canAddToCart" v-on:click="addToCart">
+        Add To Cart
+      </button>
+      <button v-show="!canAddToCart" disabled="true" v-on:click="addToCart">
         Add To Cart
       </button>
     </div>
@@ -54,6 +52,11 @@
           if (this.lesson.numberOfSpaces > 0) {
             this.lesson.numberOfSpaces -= 1
           }
+        }
+      },
+      computed: {
+        canAddToCart () {
+          return this.lesson.numberOfSpaces > 0
         }
       }
     });
